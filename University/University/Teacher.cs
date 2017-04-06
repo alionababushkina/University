@@ -8,54 +8,56 @@ using System.Drawing;
 
 namespace University
 {
-    class Autorization : Form
+    class Teacher : Form
     {
-        public Autorization()
+        public Teacher()
         {
-            var login = new LinkLabel()
+            var login = new ComboBox()
             {
                 Location = new Point(0, 0),
                 Size = new Size(ClientSize.Width, 30),
-                Text = "Кто вы? "
+                Text = "ФИО"
             };
 
-            var boxStudent = new TextBox()
+            var boxPrint = new TextBox()
             {
                 Location = new Point(0, login.Bottom),
                 Size = login.Size
             };
 
-            var buttonStudent = new Button
+            var buttonPrint = new Button
             {
-                Location = new Point(0,boxStudent.Bottom),
+                Location = new Point(0, boxPrint.Bottom),
                 Size = new Size(100, 40),
-                Text = "Cтудент"
+                Text = "Печать"
             };
 
-            var boxTeacher = new TextBox()
+            var boxView = new TextBox()
             {
                 Location = new Point(0, login.Bottom),
                 Size = login.Size
             };
 
-            var buttonTeacher = new Button
+            var buttonView = new Button
             {
-                Location = new Point(110, boxTeacher.Bottom),
+                Location = new Point(110, boxView.Bottom),
                 Size = new Size(100, 40),
-                Text = "Преподаватель"
+                Text = "Просмотр"
             };
 
-            var boxAdministrator = new TextBox()
+            var boxAgo = new TextBox()
             {
                 Location = new Point(0, login.Bottom),
                 Size = login.Size
             };
-            var buttonAdministrator = new Button
+            var buttonAgo = new Button
             {
-                Location = new Point(220, boxAdministrator.Bottom),
+                Location = new Point(220, boxAgo.Bottom),
                 Size = new Size(100, 40),
-                Text = "Администратор"
+                Text = "Назад"
             };
+
+            
 
             //SizeChanged += (sender, args) =>
             //{
@@ -65,12 +67,14 @@ namespace University
             //}
 
             Controls.Add(login);
-            Controls.Add(boxStudent);
-            Controls.Add(buttonStudent);
-            Controls.Add(boxTeacher);
-            Controls.Add(buttonTeacher);
-            Controls.Add(boxAdministrator);
-            Controls.Add(buttonAdministrator);
+            Controls.Add(boxPrint);
+            Controls.Add(buttonPrint);
+            Controls.Add(boxView);
+            Controls.Add(buttonView);
+            Controls.Add(boxAgo);
+            Controls.Add(buttonAgo);
+            
+
 
 
         }

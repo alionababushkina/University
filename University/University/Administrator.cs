@@ -8,15 +8,15 @@ using System.Drawing;
 
 namespace University
 {
-    class Student : Form
+    class Administrator : Form
     {
-        public Student()
+        public Administrator()
         {
             var login = new LinkLabel()
             {
                 Location = new Point(0, 0),
                 Size = new Size(ClientSize.Width, 30),
-                Text = "Cтудент "
+                Text = "Администратор "
             };
 
             var boxFaculty = new TextBox()
@@ -57,16 +57,16 @@ namespace University
                 Text = "Группа"
             };
 
-            var boxAgo = new TextBox()
+            var boxChange = new TextBox()
             {
                 Location = new Point(0, login.Bottom),
                 Size = login.Size
             };
-            var buttonAgo = new Button
+            var buttonChange = new Button
             {
-                Location = new Point(320, boxAgo.Bottom),
+                Location = new Point(320, boxChange.Bottom),
                 Size = new Size(100, 40),
-                Text = "Назад"
+                Text = "Изменить"
             };
 
             var boxView = new TextBox()
@@ -80,7 +80,17 @@ namespace University
                 Size = new Size(100, 40),
                 Text = "Просмотр"
             };
-            
+            var boxAdd = new TextBox()
+            {
+                Location = new Point(0, login.Bottom),
+                Size = login.Size
+            };
+            var buttonAdd = new Button
+            {
+                Location = new Point(520, boxAdd.Bottom),
+                Size = new Size(100, 40),
+                Text = "Добавить"
+            };
 
             Controls.Add(login);
             Controls.Add(boxFaculty);
@@ -89,18 +99,15 @@ namespace University
             Controls.Add(buttonDirection);
             Controls.Add(boxGroup);
             Controls.Add(buttonGroup);
-            Controls.Add(boxAgo);
-            Controls.Add(buttonAgo);
+            Controls.Add(boxChange);
+            Controls.Add(buttonChange);
             Controls.Add(boxView);
             Controls.Add(buttonView);
-         
-
+            Controls.Add(boxAdd);
+            Controls.Add(buttonAdd);
 
         }
-
-
     }
 }
-
+        
     
-

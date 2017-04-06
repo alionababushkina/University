@@ -18,6 +18,8 @@ namespace University
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Autorization());
             Application.Run(new Student());
+            Application.Run(new Teacher());
+            Application.Run(new Administrator());
         }
     }
 }
