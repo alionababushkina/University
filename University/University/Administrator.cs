@@ -14,97 +14,87 @@ namespace University
         {
             var login = new LinkLabel()
             {
-                Location = new Point(0, 0),
-                Size = new Size(ClientSize.Width, 30),
-                Text = "Администратор "
+               
+                Text = "Администратор ",
+                Dock = DockStyle.Fill
             };
 
-            var boxFaculty = new TextBox()
-            {
-                Location = new Point(0, login.Bottom),
-                Size = login.Size
-            };
+            
 
             var buttonFaculty = new Button
             {
-                Location = new Point(0, boxFaculty.Bottom),
-                Size = new Size(100, 40),
-                Text = "Факультет"
+                
+                Text = "Факультет",
+                Dock = DockStyle.Fill
             };
 
-            var boxDirection = new TextBox()
-            {
-                Location = new Point(0, login.Bottom),
-                Size = login.Size
-            };
+           
 
             var buttonDirection = new Button
             {
-                Location = new Point(110, boxDirection.Bottom),
-                Size = new Size(100, 40),
-                Text = "Направление"
+                
+                Text = "Направление",
+                Dock = DockStyle.Fill
             };
 
-            var boxGroup = new TextBox()
-            {
-                Location = new Point(0, login.Bottom),
-                Size = login.Size
-            };
+           
             var buttonGroup = new Button
             {
-                Location = new Point(220, boxGroup.Bottom),
-                Size = new Size(100, 40),
-                Text = "Группа"
+               
+                Text = "Группа",
+                Dock = DockStyle.Fill
             };
 
-            var boxChange = new TextBox()
-            {
-                Location = new Point(0, login.Bottom),
-                Size = login.Size
-            };
+          
             var buttonChange = new Button
             {
-                Location = new Point(320, boxChange.Bottom),
-                Size = new Size(100, 40),
-                Text = "Изменить"
+                
+                Text = "Изменить",
+                Dock = DockStyle.Fill
             };
 
-            var boxView = new TextBox()
-            {
-                Location = new Point(0, login.Bottom),
-                Size = login.Size
-            };
+           
             var buttonView = new Button
             {
-                Location = new Point(420, boxView.Bottom),
-                Size = new Size(100, 40),
-                Text = "Просмотр"
+               
+                Text = "Просмотр",
+                Dock = DockStyle.Fill
             };
-            var boxAdd = new TextBox()
-            {
-                Location = new Point(0, login.Bottom),
-                Size = login.Size
-            };
+          
             var buttonAdd = new Button
             {
-                Location = new Point(520, boxAdd.Bottom),
-                Size = new Size(100, 40),
-                Text = "Добавить"
+               
+                Text = "Добавить",
+                Dock = DockStyle.Fill
             };
 
-            Controls.Add(login);
-            Controls.Add(boxFaculty);
-            Controls.Add(buttonFaculty);
-            Controls.Add(boxDirection);
-            Controls.Add(buttonDirection);
-            Controls.Add(boxGroup);
-            Controls.Add(buttonGroup);
-            Controls.Add(boxChange);
-            Controls.Add(buttonChange);
-            Controls.Add(boxView);
-            Controls.Add(buttonView);
-            Controls.Add(boxAdd);
-            Controls.Add(buttonAdd);
+            var table = new TableLayoutPanel();
+            table.RowStyles.Clear();
+            table.RowStyles.Add(new RowStyle(SizeType.Percent, 50));
+            table.RowStyles.Add(new RowStyle(SizeType.Absolute, 30));
+            table.RowStyles.Add(new RowStyle(SizeType.Absolute, 30));
+            table.RowStyles.Add(new RowStyle(SizeType.Absolute, 30));
+            table.RowStyles.Add(new RowStyle(SizeType.Absolute, 30));
+            table.RowStyles.Add(new RowStyle(SizeType.Absolute, 30));
+            table.RowStyles.Add(new RowStyle(SizeType.Absolute, 30));
+            table.RowStyles.Add(new RowStyle(SizeType.Absolute, 30));
+            table.RowStyles.Add(new RowStyle(SizeType.Absolute, 30));
+            table.RowStyles.Add(new RowStyle(SizeType.Percent, 50));
+            table.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
+
+            table.Controls.Add(new Panel(), 0, 0);
+            table.Controls.Add(login, 0, 1);
+            table.Controls.Add(buttonFaculty, 0, 2);
+            table.Controls.Add(buttonDirection, 0, 3);
+            table.Controls.Add(buttonGroup, 0, 4);
+            table.Controls.Add(buttonChange, 0, 5);
+            table.Controls.Add(buttonView, 0, 6);
+            table.Controls.Add(buttonAdd, 0, 7);
+            table.Controls.Add(new Panel(), 0, 8);
+
+
+            table.Dock = DockStyle.Fill;
+            Controls.Add(table);
 
         }
     }

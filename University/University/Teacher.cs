@@ -12,68 +12,69 @@ namespace University
     {
         public Teacher()
         {
-            var login = new ComboBox()
+            var login = new LinkLabel()
             {
-                Location = new Point(0, 0),
-                Size = new Size(ClientSize.Width, 30),
-                Text = "ФИО"
+               
+                Text = "Преподаватель ",
+                Dock = DockStyle.Fill
             };
 
-            var boxPrint = new TextBox()
+            var boxTeacher = new ComboBox()
             {
-                Location = new Point(0, login.Bottom),
-                Size = login.Size
+                
+                Text = "ФИО",
+                Dock = DockStyle.Fill
             };
+
+           
 
             var buttonPrint = new Button
             {
-                Location = new Point(0, boxPrint.Bottom),
-                Size = new Size(100, 40),
-                Text = "Печать"
+               
+                Text = "Печать",
+                Dock = DockStyle.Fill
             };
 
-            var boxView = new TextBox()
-            {
-                Location = new Point(0, login.Bottom),
-                Size = login.Size
-            };
-
+           
             var buttonView = new Button
             {
-                Location = new Point(110, boxView.Bottom),
-                Size = new Size(100, 40),
-                Text = "Просмотр"
+               
+                Text = "Просмотр",
+                Dock = DockStyle.Fill
             };
 
-            var boxAgo = new TextBox()
-            {
-                Location = new Point(0, login.Bottom),
-                Size = login.Size
-            };
+            
             var buttonAgo = new Button
             {
-                Location = new Point(220, boxAgo.Bottom),
-                Size = new Size(100, 40),
-                Text = "Назад"
+                Text = "Назад",
+                Dock = DockStyle.Fill
             };
 
-            
+            var table = new TableLayoutPanel();
+            table.RowStyles.Clear();
+            table.RowStyles.Add(new RowStyle(SizeType.Percent, 50));
+            table.RowStyles.Add(new RowStyle(SizeType.Absolute, 30));
+            table.RowStyles.Add(new RowStyle(SizeType.Absolute, 30));
+            table.RowStyles.Add(new RowStyle(SizeType.Absolute, 30));
+            table.RowStyles.Add(new RowStyle(SizeType.Absolute, 30));
+            table.RowStyles.Add(new RowStyle(SizeType.Absolute, 30));
+            table.RowStyles.Add(new RowStyle(SizeType.Absolute, 30));
+            table.RowStyles.Add(new RowStyle(SizeType.Percent, 50));
+            table.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
 
-            //SizeChanged += (sender, args) =>
-            //{
-            //    Size = new Size(ClientSize.Width, 30);
-            //    Size = login.Size;
+            table.Controls.Add(new Panel(), 0, 0);
+            table.Controls.Add(login, 0, 1);
+            table.Controls.Add(boxTeacher, 0, 2);
+            table.Controls.Add(buttonPrint, 0, 3);
+            table.Controls.Add(buttonView, 0, 4);
+            table.Controls.Add(buttonAgo, 0, 5);
+            table.Controls.Add(new Panel(), 0, 6);
 
-            //}
+            table.Dock = DockStyle.Fill;
+            Controls.Add(table);
 
-            Controls.Add(login);
-            Controls.Add(boxPrint);
-            Controls.Add(buttonPrint);
-            Controls.Add(boxView);
-            Controls.Add(buttonView);
-            Controls.Add(boxAgo);
-            Controls.Add(buttonAgo);
-            
+
+
 
 
 
